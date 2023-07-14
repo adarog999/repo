@@ -1,0 +1,213 @@
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans&display=swap');
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+body {
+    background-color: #1B2223;
+}
+.nav-bar {
+    display: flex;
+    justify-content: space-between;
+    height: 70px;
+    align-items: center;
+    padding:0 20px;
+    font-family: 'Work Sans', sans-serif;
+    position: sticky;
+    top: 0;
+    background-color: #3A4F50;
+    box-shadow: -3px 3px 10px 2px white;
+}
+.nav-bar h2 {
+    letter-spacing: 1.2px;
+    font-size: 30px;
+    color: #f4f4f4;
+}
+.nav-bar ul {
+    display: flex;
+    column-gap: 20px;
+    transition: all .3s;
+}
+.nav-bar ul li {
+    list-style: none;
+}
+.nav-bar ul li a {
+    text-decoration: none;
+    cursor: pointer;
+    color: #0EF5CC;
+    letter-spacing: 1px;
+    display: inline-block;
+    transition: all .3s;
+}
+.nav-bar ul li .icon {
+    display: none;
+}
+.nav-bar ul li a:hover {
+    transform: scale(1.1);
+    color: #fff;
+}
+.nav-bar  input[type='checkbox'] {
+    width: 30px;
+    height: 30px;
+    vertical-align: middle;
+    position: absolute;
+    right: 10px;
+    opacity: 0;
+    z-index: 5;
+    display: none;
+}
+.nav-bar .menu {
+    position: absolute;
+    right: 10px;
+    font-size: 35px;
+    font-weight: 600;
+    z-index: 4;
+    color: white;
+    display: none;
+}
+
+.section1 {
+    background-image: url('/bg.jpg');
+    height: 500px;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.section1 .text {
+    width: 100%;
+    max-width: 1000px;
+    padding: 20px;
+    background-color: #0EF6CC40;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    row-gap: 20px;
+}
+.section1 .text h1 {
+    font-family: 'Work sans',sans-serif;
+    font-size: 35px;
+    font-weight: bold;
+}
+.section1 .text p {
+    letter-spacing: 1px;
+    font-family: 'Work sans',sans-serif;
+}
+/* section2 */
+.section2 {
+    margin: 50px 0px;
+    display: flex;
+    justify-content: center;
+}
+ .card-container {
+    display: flex;
+    align-items: center;
+    column-gap: 30px;
+    justify-content: center;
+    font-family: 'Work sans',sans-serif;
+    flex-wrap: wrap;
+    row-gap: 20px;
+}
+.card-container .card {
+    height: max-content;
+    flex-basis: 300px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    row-gap: 10px;
+    border-radius: 20px;
+    background-color: #3A4F50;
+    cursor: pointer;
+    transition: all .3s;
+}
+.card-container .card:hover {
+    transform: scale(1.1);
+}
+.card-container .card .img {
+    width: 50px;
+    height: 50px;
+    border-radius: 100%;
+    background-image: linear-gradient(to bottom right,#0EF5CC,#f4f44f);
+}
+.card-container .card .title {
+    font-size: 20px;
+    letter-spacing: 1px;
+    color: #F4FEFD;
+}
+/* section2 */
+
+
+@media only screen and (max-width: 767px) {
+    .nav-bar ul {
+        column-gap: 50px;
+
+    }
+    .nav-bar ul li a {
+        display: none;
+    }
+    .nav-bar ul li .icon {
+        display: inline;
+        font-size: 27px;
+        color: #0EF5CC;
+    }
+    .card-container {
+        row-gap: 20px;
+        padding: 10px;
+    }
+    .card-container .card {
+        flex-grow: 1;
+    }
+}
+
+@media only screen and (max-width: 540px) {
+    .nav-bar  input[type='checkbox']:checked ~ ul {
+        transform: translateX(0);
+    }
+    .nav-bar  input[type='checkbox']:not(checked) ~ ul {
+        transform: translateX(100%);
+    }
+    .nav-bar ul {
+        transform: translateX(100%);
+        position: fixed;        
+        width: 100%;
+        height: 100vh;
+        flex-direction: column;
+        top:0;
+        background-color: rgb(12, 6, 6);
+        left: 0;
+        padding: 20px;
+        align-items: center;
+        justify-content: space-around;
+    }
+    .nav-bar ul li {
+        display: flex;
+        align-items: center;
+        width: 200px;
+        justify-content: space-around;
+    }
+    .nav-bar ul li a {
+        display: inline-block;
+        font-size: 20px;
+    }
+    .nav-bar ul li .icon {
+        display: inline;
+        
+    }
+    .nav-bar  input[type='checkbox'] {
+        display: inline;
+    }
+    .nav-bar .menu {
+        position: absolute;
+        display: inline;
+    }
+    
+    .section1 .text h1 {
+        font-size: 18;
+    }
+
+}
